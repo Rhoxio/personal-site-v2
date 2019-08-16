@@ -1,0 +1,15 @@
+{
+  "name": "public-site-v2",
+  "version": "1.0.0",
+  "description": "public site",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir public && sass scss/styles.scss public/styles.css"
+  },
+  "author": "Kevin Maze",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5"
+  }
+}
