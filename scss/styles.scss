@@ -76,8 +76,8 @@ body{
   p{
     font-family: "Heebo", sans-serif;
     text-align: center;
-    width: 48%;
-    margin-left: 26%;
+    width: 58%;
+    margin-left: 21%;
     font-size: 20px;
     margin-top: 30px;
   }
@@ -94,8 +94,105 @@ body{
     margin-left: 45%;
   }
 
-  .values {
+  .details {
+    margin-top: 70px;
+    .photo-wrapper{
+      padding: 20px;
+      width: 100%;
 
+      img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+.spacer{
+  height: 15px;
+}
+
+.bar-bg{
+  background-color: #eaeaea;
+  height: 30px;
+  margin-bottom: 10px;
+
+
+  .bar-label{
+    width: 20%;
+    display: inline-block;
+    height: inherit;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    background-color: #339595;
+    color: white;
+  }
+
+  .percentage{
+    background-color: #339594bd;
+    display: inline-block;
+    top: 0;
+    left: 20%;
+    position: absolute;
+    height: 30px;
+  }
+
+  .js{
+    width: 50%;
+    
+  } 
+
+  .rails{
+    width: 60%;
+  } 
+
+  .node{
+    width: 40%;
+  }
+
+  .html{
+    width: 40%;
+  }
+
+  .react{
+    width: 30%;
+  }
+
+  .photoshop{
+    width: 20%;
+  }
+
+  .css {
+    width: 40%;
+  }
+
+  .digital-ocean{
+    width: 55%;
+  }
+
+  .aws{
+    width: 45%;    
+  }
+
+  .sidekiq{
+    width: 50%;
+  }
+
+  .redis{
+   width: 45%; 
+  }
+
+  .heroku{
+    width: 45%; 
+  }
+
+  span{
+    line-height: 30px;
+    margin-right: 10px;
+    color: #339594;
+    float:right;
   }
 }
 
