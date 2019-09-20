@@ -232,6 +232,13 @@ table {
 td {
   vertical-align: top; }
 
+#moire-canvas-overlay {
+  position: relative;
+  top: -600px; }
+
+.moire-container {
+  overflow: hidden; }
+
 body {
   background-color: #f1e8e621; }
 
