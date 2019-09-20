@@ -25,6 +25,18 @@ $(function(){
       document.getElementById("moire-canvas-overlay")
     ];
 
+    var init, rotate, start, stop,
+      active = false,
+      angle = 0,
+      startAngle = 0,
+      center = {
+        x: 0,
+        y: 0
+      },
+      R2D = 180 / Math.PI,
+      
+      // Workaround for canvas id stabilization.
+      rot = document.getElementById('moire-canvas-overlay');
     // Generate random coordinates
     var randomSeeds = []
     for (var i = 0; i<= num; i++){
@@ -41,6 +53,8 @@ $(function(){
     var btnReset = document.getElementById("btnReset");
     btnReset.addEventListener("click", function() {
       rotation = 0
+      angle = 0
+      startAngle = 0
       rotateCanvas(rotation)
       for(var i = 0; i <= canvases.length - 1; i++){
         var canvas = canvases[i]
@@ -64,7 +78,7 @@ $(function(){
           var x = seeds[i][0]
           var y = seeds[i][1]
           context.arc(x, y, radius, 0, 2*Math.PI);
-          context.fillStyle = "red";
+          context.fillStyle = "#f6f6dc";
           context.fill();
           context.closePath();
       }
@@ -85,22 +99,8 @@ $(function(){
     }
 
     // Rotation Binding Script
-    // Based upon: https://codepen.io/graphilla/pen/MybMxP
+    // Shamelessly based upon: https://codepen.io/graphilla/pen/MybMxP
     (function() {
-      console.log("got run")
-      var init, rotate, start, stop,
-        active = false,
-        angle = 0,
-        rotation = 0,
-        startAngle = 0,
-        center = {
-          x: 0,
-          y: 0
-        },
-        R2D = 180 / Math.PI,
-        
-        // Workaround for canvas id stabilization.
-        rot = document.getElementById('moire-canvas-overlay');
 
       init = function() {
         rot.addEventListener("mousedown", start, false);

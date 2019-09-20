@@ -236,6 +236,9 @@ td {
   position: relative;
   top: -600px; }
 
+#moire-canvas {
+  background-color: black; }
+
 .moire-container {
   overflow: hidden; }
 
