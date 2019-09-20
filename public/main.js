@@ -15,11 +15,13 @@ $(function () {
   });
 
   if ($("#moire-canvas").length) {
+    // For generation
     var rotation = 0;
     var num = 8000;
     var radius = 1;
     var max = 1000;
-    var canvases = [document.getElementById("moire-canvas"), document.getElementById("moire-canvas-overlay")];
+    var canvases = [document.getElementById("moire-canvas"), document.getElementById("moire-canvas-overlay")]; // For rotation bindings...
+
     var init,
         rotate,
         start,
@@ -32,8 +34,7 @@ $(function () {
       y: 0
     },
         R2D = 180 / Math.PI,
-        // Workaround for canvas id stabilization.
-    rot = document.getElementById('moire-canvas-overlay'); // Generate random coordinates
+        rot = document.getElementById('moire-canvas-overlay'); // Generate random coordinates
 
     var randomSeeds = [];
 
@@ -57,14 +58,15 @@ $(function () {
 
       for (var i = 0; i <= canvases.length - 1; i++) {
         var canvas = canvases[i];
-        console.log(canvas);
         createRandomNodes(num, radius, max, randomSeeds, canvas);
       }
     }); // Bind right rotation
 
     $("#rotate-right").on("click", function (e) {
-      e.preventDefault();
-      rotateCanvas(rotation++);
+      e.preventDefault(); // rotateCanvas(rotation++)
+
+      createTriangleLattice(max, document.getElementById('moire-canvas'), 10);
+      createTriangleLattice(max, document.getElementById('moire-canvas-overlay'), 10);
     });
 
     function createRandomNodes(num, radius, max, seeds, canvas) {
@@ -84,10 +86,25 @@ $(function () {
       return true;
     }
 
-    function createTriangleLattice(max, canvas, size) {
-      var count = max / size,
-          perRow = max / count;
+    function createTriangleLattice(max, canvas, hypotenuse) {
+      var perRow = canvas.width / hypotenuse;
       var context = canvas.getContext("2d");
+      var yOffset = hypotenuse / 2;
+      var xOffset = hypotenuse;
+      console.log(perRow);
+      context.beginPath();
+      context.moveTo(0, 0); // Drawing in an 'L' shape.
+
+      for (i = 0; i < perRow; i++) {
+        context.lineTo(yOffset, 5);
+        context.lineTo(xOffset, 0);
+        xOffset = xOffset + hypotenuse;
+        yOffset = yOffset + hypotenuse;
+      }
+
+      context.closePath();
+      context.fillStyle = "#FFCC00";
+      context.fill();
     }
 
     function rotateCanvas(rotation) {
