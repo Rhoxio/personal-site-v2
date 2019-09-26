@@ -92,26 +92,39 @@ $(function(){
 
       var yOffset = hypotenuse / 2
       var xOffset = hypotenuse
+      var firstPoint = 5
+      var secondPoint = hypotenuse / 2
+      var thirdPoint = hypotenuse
+      var forthPoint = 0
+      
 
       var currentRow = 0
-
-      console.log(perRow)
-
+      var height = Math.sqrt((Math.pow(hypotenuse/2, 2) + Math.pow(hypotenuse/2, 2)))
 
       context.beginPath();
       context.moveTo(0, 0);
+      var i, j
       for(i=0; i<totalRows;i++){
         // Drawing in an 'L' shape.
         for (j = 0; j < perRow; j++){
-          context.lineTo(yOffset, hypotenuse/2);
-          context.lineTo(xOffset, 0);
-          xOffset = xOffset + hypotenuse
-          yOffset = yOffset + hypotenuse
+          // (5, 5)
+          // (10, 0)
+          context.lineTo(firstPoint, secondPoint);
+          context.lineTo(thirdPoint, forthPoint);
+          firstPoint = firstPoint + hypotenuse
+          thirdPoint = thirdPoint + hypotenuse
         } 
+        // var yOffset = (height * (i))
+        // console.log(yOffset)
+        // context.moveTo(0, yOffset);
+        // firstPoint = yOffset
+        // secondPoint = secondPoint + height
+        // thirdPoint = thirdPoint + height
+        // forthPoint = yOffset + hypotenuse
 
-        yOffset = 0
-        xOffset = 0
-        currentRow = currentRow + (hypotenuse / 2)
+      //   yOffset = 0
+      //   xOffset = 0
+      //   currentRow = currentRow + (hypotenuse / 2)
       }
 
 

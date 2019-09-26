@@ -88,18 +88,40 @@ $(function () {
 
     function createTriangleLattice(max, canvas, hypotenuse) {
       var perRow = canvas.width / hypotenuse;
+      var totalRows = canvas.height / (hypotenuse / 2);
       var context = canvas.getContext("2d");
       var yOffset = hypotenuse / 2;
       var xOffset = hypotenuse;
-      console.log(perRow);
+      var firstPoint = 5;
+      var secondPoint = hypotenuse / 2;
+      var thirdPoint = hypotenuse;
+      var forthPoint = 0;
+      var currentRow = 0;
+      var height = Math.sqrt(Math.pow(hypotenuse / 2, 2) + Math.pow(hypotenuse / 2, 2));
       context.beginPath();
-      context.moveTo(0, 0); // Drawing in an 'L' shape.
+      context.moveTo(0, 0);
+      var i, j;
 
-      for (i = 0; i < perRow; i++) {
-        context.lineTo(yOffset, 5);
-        context.lineTo(xOffset, 0);
-        xOffset = xOffset + hypotenuse;
-        yOffset = yOffset + hypotenuse;
+      for (i = 0; i < totalRows; i++) {
+        // Drawing in an 'L' shape.
+        for (j = 0; j < perRow; j++) {
+          // (5, 5)
+          // (10, 0)
+          context.lineTo(firstPoint, secondPoint);
+          context.lineTo(thirdPoint, forthPoint);
+          firstPoint = firstPoint + hypotenuse;
+          thirdPoint = thirdPoint + hypotenuse;
+        } // var yOffset = (height * (i))
+        // console.log(yOffset)
+        // context.moveTo(0, yOffset);
+        // firstPoint = yOffset
+        // secondPoint = secondPoint + height
+        // thirdPoint = thirdPoint + height
+        // forthPoint = yOffset + hypotenuse
+        //   yOffset = 0
+        //   xOffset = 0
+        //   currentRow = currentRow + (hypotenuse / 2)
+
       }
 
       context.closePath();
