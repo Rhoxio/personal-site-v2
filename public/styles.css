@@ -291,8 +291,50 @@ body {
   border-radius: 4px;
   margin-top: 6px; }
 
+.active {
+  color: #339595 !important; }
+
+.projects {
+  padding: 0;
+  background-color: #f7f7f7; }
+  .projects h4 {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif; }
+  .projects .section-tabs {
+    width: 100%;
+    height: 60px;
+    display: inline-block;
+    margin-left: 12.5%;
+    padding: 0 10%; }
+    .projects .section-tabs .tab {
+      width: 24%;
+      display: inline-block;
+      text-align: center;
+      line-height: 60px;
+      color: #969595; }
+      .projects .section-tabs .tab span {
+        font-family: 'Heebo', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        color: inherit;
+        transition: .5s;
+        text-decoration: none; }
+        .projects .section-tabs .tab span:hover {
+          color: #339595;
+          cursor: pointer; }
+  .projects .projects-bar {
+    width: 10%;
+    margin-left: 45%; }
+  .projects .proj-img {
+    width: 33%;
+    margin-bottom: 5px; }
+  .projects .projects-container {
+    margin-left: 12.5%; }
+
 .about {
-  height: 1000px; }
+  height: 900px; }
   .about p {
     font-family: "Heebo", sans-serif;
     text-align: center;
@@ -346,7 +388,7 @@ body {
         height: 215px; }
 
 .skills-container {
-  margin-left: 5%; }
+  margin-left: 7%; }
 
 .spacer {
   height: 15px; }

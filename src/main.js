@@ -13,6 +13,23 @@ $(function(){
       }, 500);
   });
 
+  $(".projects-jump").click(function(){
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#projects").offset().top
+    }, 500);
+  })
+
+  $(".tab span").click(function(e){
+    e.preventDefault()
+    var tabs = $(".section-tabs").children()
+    $.each(tabs, function(i, tab){
+      $(tab).removeClass('active')
+    })
+    $(this).parent().addClass('active')
+
+    // Toggle specific tab based on of attr on element
+  })
+
   // if($("#moire-canvas").length){
   //   // For generation
   //   var rotation = 0;
