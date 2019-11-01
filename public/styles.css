@@ -245,14 +245,40 @@ td {
 body {
   background-color: #f1e8e621; }
 
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 200px;
+  padding-top: 50px; }
+  footer .icons {
+    width: 50%;
+    margin-left: 24%;
+    padding-left: 11%; }
+    footer .icons .icon {
+      height: 100px;
+      width: 18%;
+      margin-right: 2%;
+      position: relative; }
+
 .brand-navbar {
   height: 60px;
   z-index: 1;
-  background-color: #00000054; }
+  background-color: #00000054;
+  position: absolute;
+  width: 100%; }
+
+.resume-link {
+  background-color: transparent;
+  color: white;
+  padding: 9px 21px;
+  font-family: 'Heebo', sans-serif;
+  border-radius: 3px;
+  border: 2px solid white; }
+  .resume-link:hover {
+    background-color: #ffffff1f; }
 
 .main-container {
-  position: relative;
-  bottom: 60px; }
+  position: relative; }
 
 .branding-main {
   height: 800px;
@@ -296,7 +322,8 @@ body {
 
 .projects {
   padding: 0;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  height: 650px; }
   .projects h4 {
     text-align: center;
     padding-top: 40px;
@@ -307,7 +334,8 @@ body {
     height: 60px;
     display: inline-block;
     margin-left: 12.5%;
-    padding: 0 10%; }
+    padding: 0 10%;
+    margin-top: 25px; }
     .projects .section-tabs .tab {
       width: 24%;
       display: inline-block;
@@ -329,7 +357,50 @@ body {
     margin-left: 45%; }
   .projects .proj-img {
     width: 33%;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    display: inline-block; }
+    .projects .proj-img .overlay {
+      width: 32.2%;
+      height: 200px;
+      background-color: #339595;
+      position: absolute;
+      /* top: 200px; */
+      /* width: 100%; */
+      height: 203px;
+      opacity: 0;
+      transition: .3s; }
+      .projects .proj-img .overlay button {
+        width: 50%;
+        height: 39px;
+        background: #ffffff1c;
+        border: 1px solid white;
+        color: white;
+        margin-left: 25%;
+        margin-top: 40px;
+        transition: .3s; }
+        .projects .proj-img .overlay button:hover {
+          background-color: #ffffff57; }
+      .projects .proj-img .overlay h5 {
+        font-family: 'Heebo', Helvetica, sans-serif;
+        color: white;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 40px; }
+      .projects .proj-img .overlay span {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-family: 'Heebo', Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 16px;
+        margin-top: 3px; }
+      .projects .proj-img .overlay:hover {
+        opacity: 1; }
+    .projects .proj-img img {
+      width: 100%;
+      height: 203px; }
   .projects .projects-container {
     margin-left: 12.5%; }
 
@@ -373,6 +444,8 @@ body {
       font-family: "Heebo", sans-serif;
       text-align: center;
       font-size: 20px; }
+    .about .descripton .email-link {
+      color: #339595; }
     .about .descripton h6 {
       font-family: "Heebo", sans-serif;
       text-align: center;

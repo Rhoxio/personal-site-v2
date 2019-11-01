@@ -19,16 +19,59 @@ $(function(){
     }, 500);
   })
 
+  $('.icon').hover(function(){
+    $(this).animate({'bottom' : '10px'}, 150)
+  })
+
+  $('.icon').mouseout(function(){
+    $(this).animate({'bottom':'0px'}, 150)
+  })
+
   $(".tab span").click(function(e){
     e.preventDefault()
     var tabs = $(".section-tabs").children()
+    var id = $(this).parent().attr("id")
     $.each(tabs, function(i, tab){
       $(tab).removeClass('active')
     })
     $(this).parent().addClass('active')
+    cyclePhotos(id)
 
     // Toggle specific tab based on of attr on element
   })
+
+  function cyclePhotos(id){
+    var elements = $(".projects-container").children()
+
+    // var exception = type+"-chip"
+    var exception = undefined
+    if(id === "ruby-tab"){
+      exception = "ruby-chip"
+    } else if (id === "js-tab"){
+      exception = "js-chip"
+    } else if (id == "other-tab"){
+      exception = "other-chip"
+    }
+
+    if (exception){
+      $.each(elements, function(i, element){
+        var current = $(element)
+        if (!current.hasClass(exception)){
+          current.hide()
+        } else {
+          current.css("margin-left", "12.5%")
+          current.show()
+        }
+      })      
+    } else {
+      $.each(elements, function(i, element){
+        var current = $(element)
+        current.css("margin-left", "0")
+        current.show()
+      })
+    }
+
+  }
 
   // if($("#moire-canvas").length){
   //   // For generation
